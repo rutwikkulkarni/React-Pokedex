@@ -3,7 +3,7 @@ import React from 'react';
 function Header(){
   return(
     <div>
-      <header className="App-header">
+      <header className="app-header">
         <h1>Pokedex</h1>
       </header>
     </div>

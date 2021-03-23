@@ -14,12 +14,14 @@ function Pokedex() {
     return pokedex;
   }
 
-  var pokedex = makePokedex(50);
+  var pokedex = makePokedex(10);
 
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      {pokedex.map((i) => <Pokemon number={i} /> )}
+      <div className="pokedex-container">
+        {pokedex.map((i) => <Pokemon number={i} /> )}
+      </div>
     </div>
   );
 }

@@ -29,10 +29,10 @@ function Pokemon(props){
   });
 
   return(
-    <div className="Pokemon-Entry">
-    <img src={pokemonData.current.sprite} alt={pokemonData.current.name}></img>
-    <h2>{pokemonData.current.name}</h2>
-    <h2>{pokemonData.current.number}</h2>
+    <div className="pokemon-entry">
+      <img src={pokemonData.current.sprite} alt={pokemonData.current.name}></img>
+      <h2>{pokemonData.current.name}</h2>
+      <h2>{pokemonData.current.number}</h2>
     </div>
   );
 }

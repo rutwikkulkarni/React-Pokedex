@@ -1,4 +1,4 @@
-.App {
+.app {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@ body{
   background-color: #282c34;
 }
 
-.App-header {
+.app-header {
   min-height: 15vh;
   display: flex;
   flex-direction: row;
@@ -20,10 +20,18 @@ body{
   color: white;
 }
 
-.Pokemon-Entry{
-  min-width: 50vw;
-  margin: 1em;
+.pokedex-container{
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  row-gap: 1em;
+}
+
+.pokemon-entry{
+  min-width: 240px;
+  min-height: 240px;
   background-color: white;
-  border-radius: 20px;
   color: #282c34;
 }
