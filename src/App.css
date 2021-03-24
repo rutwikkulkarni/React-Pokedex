@@ -30,8 +30,28 @@ body{
 }
 
 .pokemon-entry{
-  min-width: 240px;
-  min-height: 240px;
+  width: 240px;
+  height: 240px;
   background-color: white;
   color: #282c34;
+}
+
+.pokemon-entry-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: auto;
+  padding: 0;
+}
+
+.pokemon-entry-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon-entry-h4{
+  margin-left: 0.5em;
 }
