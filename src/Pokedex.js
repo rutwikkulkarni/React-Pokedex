@@ -5,16 +5,23 @@ import Pokemon from './Pokemon.js';
 
 function Pokedex() {
 
-  function makePokedex(count){
+  const makePokedex = (count) => {
     pokedex = [];
-    for(var i = 1; i <= count; i++){
+    for(let i = 1; i <= count; i++){
       pokedex.push(i);
     }
-    console.log(pokedex)
     return pokedex;
   }
 
-  var pokedex = makePokedex(10);
+  const makePokedexInRange = (start, end) => {
+    pokedex = [];
+    for(let i = start; i <= end; i++){
+      pokedex.push(i);
+    }
+    return pokedex;
+  }
+
+  var pokedex = makePokedexInRange(150, 208);
 
   return (
     <div className="app">
