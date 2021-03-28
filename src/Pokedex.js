@@ -1,42 +1,41 @@
-import React from 'react';
-import './App.css';
-import Header from './Header.js';
-import Pokemon from './Pokemon.js';
+import React from 'react'
+import Pokemon from './Pokemon'
 
-function Pokedex() {
+const Pokedex = () => {
+    const makePokedex = (count) => {
+        pokedex = [];
+        for(let i = 1; i <= count; i++){
+          pokedex.push(i);
+        }
+        return pokedex;
+      }
+    
+      const makePokedexInRange = (start, end) => {
+        pokedex = [];
+        for(let i = start; i <= end; i++){
+          pokedex.push(i);
+        }
+        return pokedex;
+      }
+    
+      var pokedex = makePokedexInRange(100, 150);
 
-  const makePokedex = (count) => {
-    pokedex = [];
-    for(let i = 1; i <= count; i++){
-      pokedex.push(i);
-    }
-    return pokedex;
-  }
-
-  const makePokedexInRange = (start, end) => {
-    pokedex = [];
-    for(let i = start; i <= end; i++){
-      pokedex.push(i);
-    }
-    return pokedex;
-  }
-
-  var pokedex = makePokedexInRange(1, 50);
-
-  return (
-    <div className="app">
-      <Header />
-      <div className="pokemon-content-container">
-        <div className="pokemon-info-container" id="pokemon-info">
-          <h1>test</h1>
-          <p>another test</p>
+      return(
+        <div>
+          <div className="pokedex-options">
+            <input type="text" id="pokemon-search" name="pokemon-search" placeholder="Search"></input>
+            <select name="gen-select" id="gen-select">
+              <option value="1">Gen I</option>
+              <option value="2">Gen II</option>
+              <option value="3">Gen III</option>
+              <option value="4">Gen IV</option>
+            </select>
+          </div>
+          <div className="pokedex-container">
+            {pokedex.map((i) => <Pokemon number={i} /> )}
+          </div>
         </div>
-        <div className="pokedex-container">
-          {pokedex.map((i) => <Pokemon number={i} /> )}
-        </div>
-      </div>
-    </div>
-  );
+      );
 }
 
 export default Pokedex;
