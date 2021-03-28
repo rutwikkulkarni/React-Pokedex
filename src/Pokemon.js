@@ -40,8 +40,16 @@ const Pokemon = (props) => {
     fetchPokemon();
   });
 
+  const activateInfo = () => {
+    let element = document.getElementById("pokemon-info");
+    if(element.style.width === ""){
+      element.style.width = "100%";
+      element.style.opacity = "1";
+    }
+  }
+
   return(
-    <div className="pokemon-entry">
+    <div className="pokemon-entry" onClick={activateInfo}>
       <header>
         <div className={"pokemon-entry-header type-" + pokemonData.types[0].type.name}>
           <h2 id="pokemon-name">{pokemonData.name}</h2>

@@ -21,13 +21,19 @@ function Pokedex() {
     return pokedex;
   }
 
-  var pokedex = makePokedexInRange(150, 208);
+  var pokedex = makePokedexInRange(1, 50);
 
   return (
     <div className="app">
       <Header />
-      <div className="pokedex-container">
-        {pokedex.map((i) => <Pokemon number={i} /> )}
+      <div className="pokemon-content-container">
+        <div className="pokemon-info-container" id="pokemon-info">
+          <h1>test</h1>
+          <p>another test</p>
+        </div>
+        <div className="pokedex-container">
+          {pokedex.map((i) => <Pokemon number={i} /> )}
+        </div>
       </div>
     </div>
   );
