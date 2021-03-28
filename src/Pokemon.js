@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Pokemon = (props) => {
   let [pokemonData, setPokemonData] = useState({
@@ -37,8 +37,9 @@ const Pokemon = (props) => {
   }
 
   useEffect(() => {
+    console.log("tes");
     fetchPokemon();
-  });
+  }, [props.number]);
 
   const goToInfo = () => {
     
@@ -48,8 +49,8 @@ const Pokemon = (props) => {
     <div className="pokemon-entry" onClick={goToInfo}>
       <header>
         <div className={"pokemon-entry-header type-" + pokemonData.types[0].type.name}>
-          <h2 id="pokemon-name">{pokemonData.name}</h2>
-          <h2 id="pokemon-number">{pokemonData.number}</h2>
+          <h2 class="pokemon-name">{pokemonData.name}</h2>
+          <h2 class="pokemon-number">{pokemonData.number}</h2>
         </div>
       </header>
       <div className="pokemon-entry-content">
