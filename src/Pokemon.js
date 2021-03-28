@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState, useCallback} from 'react';
 
 const Pokemon = (props) => {
-  let pokemonData = useRef({
+  let [pokemonData, setPokemonData] = useState({
     sprite: "",
     name: "",
     number: 0,
@@ -13,8 +13,6 @@ const Pokemon = (props) => {
       }
     ]
   });
-  const [, updateState] = useState();
-  const forceUpdate = useCallback(() => updateState({}), []);
 
   const padNumber = (number, length) => {
     let str = "" + number;
@@ -28,33 +26,32 @@ const Pokemon = (props) => {
     fetch("https://pokeapi.co/api/v2/pokemon/" + props.number)
     .then(response => response.json())
     .then(data => {
-      pokemonData.current.sprite  = "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/" + padNumber(props.number, 3) + ".png";
-      pokemonData.current.name    = data.name[0].toUpperCase() + data.name.substr(1, data.name.length);
-      pokemonData.current.number  = props.number;
-      pokemonData.current.types   = data.types;
-      forceUpdate();
+      setPokemonData({
+        sprite: "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/" + padNumber(props.number, 3) + ".png",
+        name: data.name[0].toUpperCase() + data.name.substr(1, data.name.length),
+        number: props.number,
+        types: data.types
+      });
     })
     .catch(error => console.log(error)); 
   }
 
   useEffect(() => {
-    if(pokemonData.current.number === 0){
-        setInterval(fetchPokemon, 1000);
-    }
+    fetchPokemon();
   });
 
   return(
     <div className="pokemon-entry">
       <header>
-        <div className={"pokemon-entry-header type-" + pokemonData.current.types[0].type.name}>
-          <h2 id="pokemon-name">{pokemonData.current.name}</h2>
-          <h2 id="pokemon-number">{pokemonData.current.number}</h2>
+        <div className={"pokemon-entry-header type-" + pokemonData.types[0].type.name}>
+          <h2 id="pokemon-name">{pokemonData.name}</h2>
+          <h2 id="pokemon-number">{pokemonData.number}</h2>
         </div>
       </header>
       <div className="pokemon-entry-content">
-        <img className = "pokemon-thumbnail" src={pokemonData.current.sprite} alt={pokemonData.current.name}></img>
+        <img className = "pokemon-thumbnail" src={pokemonData.sprite} alt={pokemonData.name}></img>
         <div className = "pokemon-types-list">
-          {pokemonData.current.types.map((i, index) => <li key={index.toString()} className={"pokemon-type-entry type-text-" + i.type.name}>{i.type.name.toUpperCase()}</li>)}
+          {pokemonData.types.map((i, index) => <li key={index.toString()} className={"pokemon-type-entry type-text-" + i.type.name}>{i.type.name.toUpperCase()}</li>)}
         </div>
       </div>
     </div>
