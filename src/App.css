@@ -9,6 +9,7 @@
 body{
   background-color: #ebf4f7;
   font-family: 'Rubik', sans-serif;
+  overflow-x: hidden;
 }
 
 .app-header {
@@ -347,7 +348,8 @@ body{
   .pokedex-container{
     display: grid;
     grid-template-columns: repeat(4, auto);
-    justify-content: center;
+    justify-content: start;
+    min-width: 55vw;
     align-items: center;
   }
 
