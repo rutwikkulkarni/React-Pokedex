@@ -32,7 +32,7 @@ const Pokemon = (props) => {
         </div>
       </header>
       <div className="pokemon-entry-content">
-        <img className = "pokemon-thumbnail" src={pokemonData.sprite} alt={pokemonData.name}></img>
+        <img className = "pokemon-thumbnail" src={pokemonData.sprite} alt={pokemonData.name} id={"image-" + props.pokemonData.number}></img>
         <div className = "pokemon-types-list">
           {pokemonData.types.map((i, index) => <li key={index.toString()} className={"pokemon-type-entry type-text-" + i.type.name}>{i.type.name.toUpperCase()}</li>)}
         </div>

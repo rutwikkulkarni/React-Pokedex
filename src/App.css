@@ -10,6 +10,7 @@ body{
   background-color: #ebf4f7;
   font-family: 'Rubik', sans-serif;
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .app-header {
@@ -250,6 +251,7 @@ body{
     grid-template-columns: repeat(1, auto);
     justify-content: center;
     align-items: center;
+    width: 100vw;
   }
 
   #pokemon-search{
@@ -284,6 +286,7 @@ body{
     grid-template-columns: repeat(2, auto);
     justify-content: center;
     align-items: center;
+    width: 80vw;
   }
 
   #pokemon-search{
@@ -317,6 +320,7 @@ body{
     grid-template-columns: repeat(3, auto);
     justify-content: center;
     align-items: center;
+    width: 80vw;
   }
 
   #pokemon-search{
@@ -349,7 +353,7 @@ body{
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: start;
-    min-width: 55vw;
+    width: 57vw;
     align-items: center;
   }
 
