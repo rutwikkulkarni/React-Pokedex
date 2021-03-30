@@ -245,6 +245,13 @@ body{
   text-shadow: 0px 0px 5px black;
 }
 
+.pokemon-details-container{
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
 @media only screen and (min-width: 450px) {
   .pokedex-container{
     display: grid;

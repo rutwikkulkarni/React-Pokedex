@@ -84,7 +84,6 @@ const Pokedex = () => {
     for(let item of potentialResults){
       if(item.innerHTML.toString().toLowerCase().startsWith(searchValue.value.toLowerCase())){
         let pokemonID = item.parentElement.getElementsByClassName("pokemon-number")[0].innerHTML;
-        console.log(item.innerHTML);
         resultArray.push(pokemonID);
       }
     }
@@ -128,7 +127,7 @@ const Pokedex = () => {
           <option value="4">Gen IV</option>
         </select>
       </div>
-      <div className="pokedex-container">
+      <div className="pokedex-container" id="pokedex-container">
         {pokedex.map((i) => <Pokemon pokemonData={i}/>)}
       </div>
     </div>
