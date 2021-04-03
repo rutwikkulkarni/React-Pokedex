@@ -18,6 +18,7 @@ const Pokemon = (props) => {
 
   useEffect(() => {
     setPokemonData(props.pokemonData);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return(

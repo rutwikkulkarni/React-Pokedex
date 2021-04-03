@@ -43,7 +43,7 @@ const Pokedex = () => {
             latestID = arr[arr.length - 1].id;
           }
         }
-        if(i >= expectedMinRange && i <= expectedMaxRange && latestID == i - 1){
+        if(i >= expectedMinRange && i <= expectedMaxRange && parseInt(latestID) === i - 1){
           setPokedex(pokedex => [...pokedex, {
             sprite: "https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/" + padNumber(i, 3) + ".png",
             name: data.name[0].toUpperCase() + data.name.substr(1, data.name.length),
@@ -103,17 +103,9 @@ const Pokedex = () => {
     }
   }
 
-  const checkSorted = () => {
-    for(let i = 0; i < pokedex.length - 1; i++){
-      if(pokedex[i].number > pokedex[i+1].number){
-        return false;
-      }
-    }
-    return true;
-  }
-
   useEffect(() => {
-    makePokedexInRange(1, 151);
+    genSet();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return(

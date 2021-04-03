@@ -48,6 +48,7 @@ const PokemonDetailsPage = () => {
       console.log(pokemonData);
       setPokemonInfo(pokemonData);
     });
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const padNumber = (number, length) => {
@@ -68,7 +69,7 @@ const PokemonDetailsPage = () => {
         </div>
         <div className="pokemon-details-content">
           <div className="pokemon-details-image">
-            <img className="pokemon-img-src" src={"https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/" + padNumber(pokemonInfo.id, 3) + ".png"}></img>
+            <img alt="pokemon" className="pokemon-img-src" src={"https://raw.githubusercontent.com/HybridShivam/Pokemon/master/assets/images/" + padNumber(pokemonInfo.id, 3) + ".png"}></img>
           </div> 
           <div className="pokemon-details-data">
             <h3 className="pokemon-details-text">Height</h3>
