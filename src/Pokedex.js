@@ -113,7 +113,7 @@ const Pokedex = () => {
   }
 
   useEffect(() => {
-    makePokedexInRange(1, 15);
+    makePokedexInRange(1, 151);
   }, []);
   
   return(

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
 
 const PokemonDetailsPage = () => {
@@ -59,6 +60,7 @@ const PokemonDetailsPage = () => {
 
   return (
     <div className={"pokemon-details-area"}>
+      <Link className="home-link" to="/">Go Back</Link>
       <div className="pokemon-details-container">
         <div className={"pokemon-details-header type-" + pokemonInfo.types[0].type.name}>
           <h2 className="pokemon-details-name">{pokemonInfo.name.toUpperCase()[0] + pokemonInfo.name.substr(1, pokemonInfo.name.length)}</h2>
