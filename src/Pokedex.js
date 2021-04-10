@@ -113,7 +113,7 @@ const Pokedex = () => {
       <div className="pokedex-options">
         <input type="text" id="pokemon-search" name="pokemon-search" placeholder="Search" onInput={searchPokemon}></input>
         <select name="gen-select" id="gen-select" onChange={genSet}>
-          <option value="1">Gen I</option>
+          <option value="1" selected="selected">Gen I</option>
           <option value="2">Gen II</option>
           <option value="3">Gen III</option>
           <option value="4">Gen IV</option>
